@@ -1,0 +1,333 @@
+/* Hele ideen med en "general" css-mappe er for at ting som brukes om igjen, animasjoner, bilder eller posisjoner på flere sider kan legges til her sånn at vi kan hente de fram enklere og for å unngå repetering av kode */
+
+/* Setter hovedfontet i body på alle sidene */
+body {
+    font-family: sans-serif;
+}
+/* Setter en determinert høyde og bredde på hovedkarakteren samt gjør at han får posisjonen absolute */
+.hero {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+/* Har lagt til en del av bildene som går igjen flere steder i klasser 
+som vi bruker i div-er og a-er.  */
+.hero.on-raft {
+    background: url(../images/characters/on-raft.png) no-repeat;
+    background-size: contain;
+}
+
+.hero.raft-sad {
+    background: url(../images/characters/on-raft-sad.png) no-repeat;
+    background-size: contain;
+}
+
+.hero.raft-land {
+    background: url(../images/characters/on-raft-on-land.png) no-repeat;
+    background-size: contain;
+}
+
+.hero.normal {
+    background: url(../images/characters/normal.png) no-repeat;
+    background-size: contain;
+}
+
+.hero.happy {
+    background: url(../images/characters/happy.png) no-repeat;
+    background-size: contain;
+}
+
+.hero.proud {
+    background: url(../images/characters/proud.png) no-repeat;
+    background-size: contain;
+}
+
+.hero.rawr {
+    background: url(../images/characters/rawr.png) no-repeat;
+    background-size: contain;
+}
+
+.hero.sad {
+    background: url(../images/characters/sad.png) no-repeat;
+    background-size: contain;
+}
+
+.mermaid-in-water {
+    background: url(../images/characters/others/mermaid-green-water.png) no-repeat;
+    background-size: contain;
+    width: 240px;
+    height: 300px;
+    position: absolute;
+    animation: wobble infinite ease-in-out 10s alternate;
+}
+
+.raft {
+    background: url(../images/misc/raft.png) no-repeat;
+    background-size: contain;
+    display: block;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    position: absolute;
+}
+
+.cloud-anim:last-child {
+    animation: cloud infinite 47s linear;
+}
+
+.plastic {
+    position: absolute;
+    animation: wobble infinite ease-in-out 3s alternate;
+}
+
+.plastic.bottle-ocean {
+    background: url(../images/misc/plastic-bottle-in-ocean-1.png) no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+}
+
+.plastic.bag-ocean {
+    background: url(../images/misc/plastic-bag-in-ocean.png) no-repeat;
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+}
+
+/* Øya på side 1 og 3 */
+.island {
+    background: url(../images/misc/island.png) no-repeat;
+    background-size: contain;
+    width: 800px;
+    height: 622px;
+}
+
+/* Pilen for å gå til neste side */
+.link-arrow{
+    height :100px; 
+    width: 150px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 55%; 
+    right: -50%;
+    animation: left-and-right 3s infinite ease-in-out alternate; 
+    transition: .5s height, .5s width;
+}
+
+.link-arrow.right {
+    background: url(../images/misc/right-arrow.png) no-repeat;
+    background-size: contain;
+}
+
+.link-arrow.left {
+    background: url(../images/misc/left-arrow.png) no-repeat;
+    background-size: contain;
+}
+
+
+.link-arrow:hover{
+    height :110px; 
+    width: 170px;
+}
+
+/* Hint-boksen som har samme funskjonalitet og utseende på alle sidene, hvis posisjoneringen ikke lar seg gjøres på en spesiel side, kaller vi denne i den tilhørende css mappen */
+#hint-box {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-image: url(../images/misc/hint.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.658);
+    position: absolute; 
+    right: 3%;
+}
+
+#hint-input {
+    position: absolute;
+    display: none;    
+}
+
+#hint-text {
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+    border: solid black 0.5px;
+    display: none;
+    position: absolute;
+    right: 5%;
+}
+
+#hint-input:checked + #hint-text {
+    display: block;
+}
+
+/* Klasse for snakkebobler */
+.speech {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 20px;
+    margin: 1em 0 1em;
+    padding: 0 20px 20px 20px;
+    width: 300px;
+    color: #333;
+    z-index: 1;
+    font-size: 1.2em;
+}
+
+.speech, .tri {
+    border: 3px solid #000;
+}
+
+/* Underklasser for pilen på snakkebobla 
+speech i div container, tri + retningsklasse på en span
+på slutten av div-en */
+.speech .tri { 
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+}
+
+/* pil nederst til venstre */
+.tri.bt-left {
+    left: 40px;
+    transform: rotate(45deg);
+    bottom: -14px;
+    border-top: none;
+    border-left: none;
+}
+
+/* pil nederst til høyre */
+.tri.bt-right {
+    right: 40px;
+    transform: rotate(45deg);
+    bottom: -14px;
+    border-top: none;
+    border-left: none;
+}
+
+/* pil på venstre side */
+.tri.left {
+    top: 50%;
+    transform: rotate(45deg);
+    left: -14px;
+    border-top: none;
+    border-right: none;
+}
+
+/* pil på høyre side */
+.tri.right {
+    top: 50%;
+    transform: rotate(45deg);
+    right: -14px;
+    border-bottom: none;
+    border-left: none;
+}
+
+/* Label stylet som knapp i dialogbokser */
+.check-btn, .speech a {
+    display: block;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+.check-btn:hover, .speech a:hover {
+    background: #ddd;
+    cursor: pointer;
+}
+
+.check-btn:active, .speech a:active {
+    background: #bbb;
+}
+
+/* Skjuler checkboxer, da vi bruker tilhørende labels for å trigge dem */
+input {
+    display: none;
+}
+
+/* Koden for skyene som blir brukt på de fleste sider, bruker nth-child for å kunne sette animasjonstiden på alle sammen forskjellige, sånn at ikke alle skyene går forbi skjermen helt likt */
+.cloud-anim {
+    position: absolute;
+    background: url(../images/misc/cloud.png) no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 140px;
+    animation: cloud infinite 40s linear;
+}
+
+.cloud-anim:first-child {
+    height: 120px;
+    width: 180px;
+    animation: cloud infinite 38s linear;
+}
+
+.cloud-anim:nth-child(2) {
+    height: 90px;
+    width: 130px;
+    animation: cloud infinite 46s linear;
+}
+
+/* Solen som spinner rundt seg selv */
+#sun {
+    position: absolute;
+    background: url(../images/misc/sun.png);
+    background-size: contain;
+    width: 150px;
+    height: 150px;
+    top: 8%;
+    left: 30%;
+    animation: rotation 30s linear infinite;
+}
+
+/* fixed-center-div til å wrappes rundt elementer vi trenger at skalerer bra til mindre skjermer */
+.fixed-center-div {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    width: 600px;
+    height: 600px;
+    /* border: 1px solid black; */
+}
+
+/* object-positions-div for nesten det samme */
+.object-positions-div {
+    position: absolute;
+    transform: translate(50%, -50%);
+    right: 50%;
+    top: 70%;
+}
+
+/* Animasjoner */
+
+@keyframes cloud {
+    0% { left: 110%; }
+    100% { left: -10%; }
+}
+
+@keyframes left-and-right{
+    0% { transform: translateX(10%); }
+    100% { transform: translateX(-10%); }
+}
+
+@keyframes show-visible{
+    0%{opacity: 0; }
+    100%{opacity: 1; }
+}
+
+/* Sola roterer 360 grader */
+@keyframes rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes wobble {
+    0% { transform:  rotate(2deg); }
+    100% { transform: rotate(-2deg); }
+}

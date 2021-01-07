@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/Side7.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ny øy, nye muligheter</title>
+</head>
+<body>
+    <main>
+        <!-- Hovedkarakteren, her brukte vi to separate elementer for å kunne animere at karakteren hopper av flåten sin -->
+        <div id="raft-div">
+            <img src="../images/misc/raft-on-land.png" id="raft" alt="Flåten">
+            <div class="hero proud"></div>
+        </div>
+        <!-- Havfruen -->
+        <div class="mermaid-in-water"></div>
+        <!-- Tekstboblen til havfruen -->
+        <div class="speech">
+            <p>Nå må du fortsette alene for jeg kan ikke gå på land. Trollmannen bor dypt inne i grotten der borte.</p>
+            <span class="tri right"></span>
+        </div>
+        <!-- Wrapper den klikkbare pilen rundt en "fixed-center-div" sånn at pilen skalerer riktig -->
+        <div class="fixed-center-div">
+            <a class="link-arrow left" href="../HTML/side8.html"></a>
+        </div>
+        <!-- Hint-boksen -->
+        <input type="checkbox" id="hint-input">
+        <p id="hint-text">Trykk på pilen for å komme deg videre!</p>
+        <label id="hint-box" for="hint-input"></label>
+    </main>
+</body>
+</html>

@@ -1,0 +1,320 @@
+body {
+    position: absolute;
+    background: #333;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+main {
+    position: absolute;
+    background: url(../images/background/bg-2.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Labels er stylet som søppel med bildebakgrunner og animasjon og posisjonert rundt på siden */
+label[for^="trash"] {
+    position: absolute;
+    display: block;
+    animation: wobble 1s infinite ease-in-out alternate;
+    transition: width .5s, height .5s;
+    opacity: .9;
+    z-index: 1;
+}
+
+/* Endrer cursor til en gripende hånd når man holder musepekeren over søppelbitene */
+label[for^="trash"]:hover {
+    width: 150px;
+    height: 150px;
+    cursor: grab;
+}
+
+label[for="trash1"] {
+    left: 75%;
+    top: 20%;
+    background: url(../images/misc/plastic-cup.png);
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+}
+
+label[for="trash2"] {
+    left: 25%;
+    top: 25%;
+    background: url(../images/misc/bottle-4.png);
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+}
+
+label[for="trash3"] {
+    left: 40%;
+    top: 40%;
+    background: url(../images/misc/bag-2.png);
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+    opacity: .5;
+}
+
+label[for="trash4"] {
+    left: 60%;
+    top: 42%;
+    background: url(../images/misc/bag-1.png);
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+}
+
+label[for="trash5"] {
+    left: 85%;
+    top: 45%;
+    background: url(../images/misc/bottle-5.png);
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+}
+
+label[for="trash6"] {
+    left: 15%;
+    top: 50%;
+    background: url(../images/misc/bottle-1.png);
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+}
+label[for="trash7"] {
+    left: 75%;
+    top: 60%;
+    background: url(../images/misc/bottle-2.png);
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+}
+
+label[for="trash8"] {
+    left: 45%;
+    top: 80%;
+    background: url(../images/misc/bottle-3.png);
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+}
+
+label[for="trash9"] {
+    left: 65%;
+    top: 85%;
+    background: url(../images/misc/bottle-4.png);
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+}
+
+/* Animerer labelene/søppelet slik at de beveger seg mot midten når tilhørende checkboks aktiveres */
+#trash1:checked ~ label[for="trash1"] {
+    animation: center-move 3s forwards, wobble 1s infinite ease-in-out alternate;
+}
+
+#trash2:checked ~ label[for="trash2"] {
+    animation: center-move 3s forwards, wobble 1s infinite ease-in-out alternate;
+}
+
+#trash3:checked ~ label[for="trash3"] {
+    animation: center-move 3s forwards, wobble 1s infinite ease-in-out alternate;
+}
+
+#trash4:checked ~ label[for="trash4"] {
+    animation: center-move 3s forwards, wobble 1s infinite ease-in-out alternate;
+}
+
+#trash5:checked ~ label[for="trash5"] {
+    animation: center-move 3s forwards, wobble 1s infinite ease-in-out alternate;
+}
+
+#trash6:checked ~ label[for="trash6"] {
+    animation: center-move 3s forwards, wobble 1s infinite ease-in-out alternate;
+}
+
+#trash7:checked ~ label[for="trash7"] {
+    animation: center-move 3s forwards, wobble 1s infinite ease-in-out alternate;
+}
+
+#trash8:checked ~ label[for="trash8"] {
+    animation: center-move 3s forwards, wobble 1s infinite ease-in-out alternate;
+}
+
+#trash9:checked ~ label[for="trash9"] {
+    animation: center-move 3s forwards, wobble 1s infinite ease-in-out alternate;
+}
+
+/* Flåten er en <a> tag med bildebakgrunn og animasjon */
+.raft {
+    left: 50%;
+    top: 40%;
+    z-index: -1;
+    opacity: 0;
+    animation: wobble 3s infinite alternate ease-in-out;
+}
+
+.raft:hover {
+    width: 350px;
+    height: 250px;
+}
+
+/* Skilpadden er en div stylet med bakgrunn og animasjon */
+#turtle {
+    position: absolute;
+    background: url(../images/misc/turtle.png);
+    background-size: contain;
+    width: 130px;
+    height: 130px;
+    left: 39%;
+    top: 36%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    animation: wobble 1s infinite alternate ease-in-out;
+}
+
+/* Styler teksten som dukker opp i snakkeboblen til skilpadden */
+#turtle>p {
+    position: absolute;
+    left: 21%;
+    width: 60px;
+    font-size: 13px;
+}
+
+#turtle>p:nth-child(2) {
+    display: none;
+}
+
+/* Skjuler den første teksten når man redder skilpadden */
+#trash3:checked ~ #turtle>p:first-child {
+    display: none;
+}
+
+/* Viser den andre teksten */
+#trash3:checked ~ #turtle>p:last-child {
+    display: inline-block;
+}
+
+/* Skilpadden svømmer avgårde når man har reddet den */
+#trash3:checked ~ #turtle {
+    animation: wobble 1s infinite alternate ease-in-out, go-left 8s ease-in-out forwards;
+}
+
+/* Flåten dukker opp når man har samlet alle plastbitene */
+input:checked + input:checked + input:checked + input:checked + input:checked + 
+input:checked + input:checked + input:checked + input:checked + .raft {
+    transition: opacity 2s ease-in, width .5s, height .5s;
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Pil som indikerer at man skal trykke på flåten når den dukker opp */
+#arrow {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    background: url(../images/misc/arrow.png) no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 100px;
+    display: none;
+    opacity: 0;
+}
+
+/* Pilen dukker opp samtidig som flåten */
+input:checked + input:checked + input:checked + input:checked + input:checked + 
+input:checked + input:checked + input:checked + input:checked ~ #arrow {
+    display: block;
+    animation: grow .4s ease-in-out forwards 1s;
+}
+
+/* Hovedkarakteren har fått på seg dykkermaska og er klar for å rense havet og bygge en flåte */
+#hero {
+    position: absolute;
+    left: 15%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    background: url(../images/characters/scuba-sad.png);
+    background-size: cover;
+    width: 600px;
+    height: 550px;
+}
+
+/* Plasserer snakkebobla ved siden av hovedkarakteren */
+.speech {
+    left: calc(18% + 200px);
+    top: 65%;
+    width: 200px;
+}
+
+/* Skjuler to tekster i snakkebobla som dukker opp underveis */
+.speech p:nth-child(2), .speech p:nth-child(3) {
+    display: none;
+}
+
+/* Viser den første teksten når skilpadden blir reddet */
+#trash3:checked ~ div.speech>p:nth-child(2) {
+    display: inline-block;
+}
+
+/* Skjuler samtidig den første teksten */
+#trash3:checked ~ div.speech>p:nth-child(1) {
+    display: none;
+}
+
+/* Viser den tredje teksten når alle plastbitene er trykket på */
+#trash1:checked + #trash2:checked + #trash3:checked + #trash4:checked + #trash5:checked + 
+#trash6:checked + #trash7:checked + #trash8:checked + #trash9:checked ~ 
+div.speech>p:nth-child(3) {
+    display: inline-block;
+}
+/* Skjuler samtidig den andre teksten */
+#trash1:checked + #trash2:checked + #trash3:checked + #trash4:checked + #trash5:checked + 
+#trash6:checked + #trash7:checked + #trash8:checked + #trash9:checked ~ 
+div.speech>p:nth-child(2) {
+    display: none;
+}
+
+/* Når alle søppelbitene er samlet og flåten er ferdig blir hovedkarakteren kjempeglad! */
+#trash1:checked + #trash2:checked + #trash3:checked + #trash4:checked + #trash5:checked + 
+#trash6:checked + #trash7:checked + #trash8:checked + #trash9:checked ~ #hero {
+    background: url(../images/characters/scuba-happy.png);
+    background-size: cover;
+}
+
+/* Animasjoner */
+
+/* Plastbitene, skilpadden og flåten beveger seg i vannet */
+@keyframes wobble {
+    0% { transform: translate(-50%, -50%) rotate(5deg); }
+    100% { transform: translate(-50%, -50%) rotate(-5deg); }
+}
+
+/* Skilpadden svømmer mot venstre ut av bildet */
+@keyframes go-left {
+    25% { top: 35% }
+    50% { top: 25% }
+    75% { top: 30% }
+    100% { top: 25%; left: -20%; }
+}
+
+/* Plastbitene flytter seg mot midten og blir usynlig når man trykker på dem */
+@keyframes center-move {
+    80% { left: 50%; top: 40%; transform: translate(-50%, -50%); opacity: 1; }
+    100% { left: 50%; top: 40%; transform: translate(-50%, -50%); opacity: 0; }
+}
+
+/* Flåten blir større på :hover */
+@keyframes grow {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(.1, .1) rotate(0deg); }
+    80% { opacity: 1; transform: translate(-50%, -50%) scale(2, 2) rotate(0deg); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.5, 1.5) rotate(0deg); }
+}

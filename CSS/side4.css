@@ -1,0 +1,148 @@
+/* Setter bakgrunnen på siden og fyller hele skjermen */
+body {
+    position: absolute;
+    background: #333;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+main {
+    position: absolute;
+    background: url(../images/background/bg-4.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* For å unngå feilposisjonering lagde vi en <div> for å representere havet, slik at figurene holder posisjonen sin uansett skjermstørrelse */
+#ocean {
+    position: absolute;
+    top:70%; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: #3b87bb;
+}
+
+/* Objekter og dyr i vannet */
+#object-animation-oil {
+    bottom: 98%;
+    position: absolute;
+    animation: cloud infinite 80s linear;
+}
+
+#object-animation-fish {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    width: 100px;
+    height: auto;
+    animation: cloud infinite 40s linear;
+}
+
+#object-animation-turtle {
+    position: absolute;
+    right: 40%;
+    top: 13%;
+    width: 150px;
+    height: auto;
+    animation: cloud infinite 44s linear;
+}
+
+#object-animation-plastic {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    right: 40%;
+    top: 25%;
+    animation: cloud infinite 39s linear;
+}
+
+#object-animation-bottle {
+    width: 45px; 
+    height: auto;
+    position: absolute;
+    right: 40%;
+    top: 10%;
+    animation: cloud infinite 38s linear;
+    transform: rotate(-50deg);
+}
+
+/* Hovedkarakteren */
+.hero {
+    position: absolute;
+    width: 370px;
+    height: 300px;
+    right: 30%;
+    animation: wobble infinite ease-in-out alternate 8s;
+}
+
+/* Teksten som forklarer situasjonen i havet */
+/* Har de i en div og for å kunne bruke nth-child for å time animasjonen forskjellig på hver av de */
+.world-infotext {
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+    border: solid black 0.5px;
+    display: block;
+    position: absolute;
+    width: 400px; 
+    animation: text-anim infinite 80s linear;
+    left: 110%;
+    top: -160%;
+}
+
+.world-infotext:nth-child(2) {
+    top: -175%;
+    animation-delay: 10s;
+}
+
+.world-infotext:nth-child(3) {
+    animation-delay: 20s;
+}
+
+.world-infotext:nth-child(4) {
+    top: -180%;
+    animation-delay: 30s;
+}
+
+.world-infotext:last-child {
+    animation-delay: 40s;
+}
+
+/* Snakkeboble */
+.speech {
+    right: 9%;
+    top: 1%;
+    opacity: 0;
+    animation: show-visible 3s forwards 50s;
+}
+
+/* hint boksen */
+#hint-box, #hint-text {
+    top: -226%;
+}
+
+/* Definere posisjonen på pilen på denne siden */
+.link-arrow {
+    right: 5%;
+    top: -40%;
+    opacity: 0;
+    animation: show-visible 3s forwards 15s, left-and-right 2s infinite ease-in-out alternate;
+}
+
+/* Animasjoner */
+
+@keyframes wobble {
+    0% { transform:  rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+@keyframes text-anim {
+    0% { left: 110%; }
+    100% { left: -100%; }
+}

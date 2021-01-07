@@ -1,0 +1,66 @@
+body {
+    position: absolute;
+    background: #333;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    position: absolute;
+    background: url(../images/background/bg-8.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.hero {
+    top: 40%; 
+    width: 400px; 
+    height: 400px;
+    left: 40%;
+    animation: walk-towards-cave 1 linear 3s;
+}
+
+
+.speech {
+    position: absolute; 
+    opacity: 0;
+    animation: show-visible 3s forwards 4s;
+    top: 20%; 
+    right: -40%;
+}
+
+.link-arrow {
+    right: -35%;
+    opacity: 0;
+    animation: show-visible 3s forwards 4s, left-and-right 2s infinite ease-in-out alternate;
+}
+
+
+@keyframes walk-towards-cave{
+    0%{ left:-20%; }
+    5%{ top: 38%; transform: rotate(-4deg); }
+    10%{ top: 40%; transform: rotate(4deg); }
+    15%{ top: 38%; transform: rotate(-4deg); }
+    20%{ top: 40%; transform: rotate(4deg); }
+    25%{ top: 38%; transform: rotate(-4deg); }
+    30%{ top: 40%; transform: rotate(4deg); }
+    35%{ top: 38%; transform: rotate(-4deg); }
+    40%{ top: 40%; transform: rotate(4deg); }
+    45%{ top: 38%; transform: rotate(-4deg); }
+    50%{ top: 40%; transform: rotate(4deg); }
+    55%{ top: 38%; transform: rotate(-4deg); }
+    60%{ top: 40%; transform: rotate(4deg); }
+    65%{ top: 38%; transform: rotate(-4deg); }
+    70%{ top: 40%; transform: rotate(4deg); }
+    75%{ top: 38%; transform: rotate(-4deg); }
+    80%{ top: 40%; transform: rotate(4deg); }
+    85%{ top: 38%; transform: rotate(-4deg); }
+    90%{ top: 40%; transform: rotate(4deg); }
+    95%{ top: 38%; transform: rotate(-4deg); }
+    100%{ left: 40%; }
+}

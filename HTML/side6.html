@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/Side6.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En havfrue i nød</title>
+</head>
+<body>
+     <main>
+         <!-- Solen -->
+        <div id="sun"></div>
+        <!-- Skyene -->
+        <div class="cloud-list">
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+        </div>
+        <!-- Hovedkarakteren -->
+        <div class="hero raft-sad"></div>
+        
+        <!-- Havfruen, ikke lenger en link da neste side åpnes i slutten av dialogen -->
+        <div class="mermaid-in-water"></div>
+        
+        <!-- Her starter dialogen mellom hovedkarakteren og havfruen -->
+        <!-- Bruker checkbox for å skjule snakkebobla når man trykker videre -->
+        <input type="checkbox" id="checkbox1">
+        <div id="chat1" class="speech">
+            <p>Mennesker kaster søppel i havet uten å tenke på oss som lever her. 
+                De ødelegger hjemmene våres uten å ta ansvar for det. Havet er nå 
+                fullt av avfall og oljespill, og det er ikke lenger trygt for oss å 
+                bo her! Vårt habitat har blitt forgiftet!!</p>
+
+            <!-- label er knyttet mot checkbox over og virker som en knapp som
+            markerer checkboxen, og via css skjuler div elementet -->
+            <label class="check-btn" for="checkbox1">Videre</label>
+            <span class="tri bt-left"></span>
+        </div>
+
+        <input type="checkbox" id="checkbox2">
+        <div id="chat2" class="speech">
+            <p>Det er veldig trist å høre. Hvis det er noe som helst jeg kan gjøre 
+                så vil jeg gjerne hjelpe!</p>
+            <label class="check-btn" for="checkbox2">Videre</label>
+            <span class="tri bt-right"></span>
+        </div>
+        
+        <input type="checkbox" id="checkbox3">
+        <div id="chat3" class="speech">
+            <p>Jeg har hørt en legende om en mektig trollmann som bor i skjul, 
+                ikke så langt herfra. Legenden sier at trollmannen kan oppfylle 
+                ethvert ønske om man klarer å bestå en test.</p>
+            <label class="check-btn" for="checkbox3">Videre</label>
+            <span class="tri bt-left"></span>
+        </div>
+        
+        <input type="checkbox" id="checkbox4">
+        <div id="chat4" class="speech">
+            <p>Det høres ut som akkurat det vi trenger. Ta meg dit nå, så skal 
+                jeg se til at havet blir som det var før!</p>
+
+            <!-- Link til neste side -->
+            <a href="../HTML/side7.html">Besøk trollmannen!</a>
+            <span class="tri bt-right"></span>
+        </div>
+
+        <div class="plastic bottle-ocean"></div>
+        <div class="plastic bag-ocean"></div>
+        
+        <input type="checkbox" id="hint-input">
+        <p id="hint-text">Trykk på havfruen for å komme deg videre!</p>
+        <label id="hint-box" for="hint-input"></label>
+     </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/Side11.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Havets helbredelse</title>
+</head>
+<body>
+    <main>
+        <!-- Hovedkarakteren -->
+        <div class="hero rawr"></div>
+        <!-- Hovedkarakteren når han har blitt gjort om til en fisk -->
+        <img src="../images/characters/others/happy-fish.png" id="happy-fish" alt="Frisk som en fisk">
+        <!-- Snakkeboblen for mannen/fisken, vi bruker en ekstra id i tilleg til class her sånn at vi kunne posisjonere tekstboblene og time de riktig til hver av karakterene -->
+        <div class="speech" id="fish-talking">
+            <p>BLUB</p>
+            <span class="tri bt-right"></span>
+        </div>
+        <!-- Snakkeboblen for havfruen -->
+        <div class="speech" id="mermaid-talking">
+            <p>Du klarte det, du reddet havet! Tusen takk! Endelig er hjemmet mitt tilbake slik det var, vakkert, rent og fullt av liv!</p>
+            <span class="tri bt-right"></span>
+        </div>
+        <!-- Har en "transparent-ocean" div slik at vi kan få det til å se ut som mannen dykkker under vann -->
+        <div id="transparent-ocean"></div>
+        <!-- Havfruen som er en klikkbar link -->
+        <a class="mermaid-in-water" href="../HTML/side12.html"></a>
+        <!-- Hint-boksen -->
+        <input type="checkbox" id="hint-input">
+        <p id="hint-text">Trykk på havfruen for å komme deg videre!</p>
+        <label id="hint-box" for="hint-input"></label>
+    </main>
+</body>
+</html>

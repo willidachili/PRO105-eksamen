@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Et lite kompromiss</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/side10.css">
+</head>
+<body>
+    <main>
+        <!-- Bruker checkbox for å skjule snakkebobla når man trykker videre -->
+        <input type="checkbox" id="checkbox1">
+        <div id="chat1" class="speech">
+            <p>Det var forresten en ting som jeg glemte å nevne, denne trolldommen, den kommer ikke helt uten kompromiss. For å hindre videre ødeleggelse må alle mennesker som har tatt del i havets fordervelse forvandles om til sjødyr! Men det er vel ikke noe du behøver å bekymre deg for, hehe.</p>
+            
+            <!-- label er knyttet mot checkbox over og virker som en knapp som
+            markerer checkboxen, og via css skjuler div elementet -->
+            <label class="check-btn" for="checkbox1">Videre</label>
+            <span class="tri right"></span>
+        </div>
+        
+        <input type="checkbox" id="checkbox2">
+        <div id="chat2" class="speech">
+            <p>Vent hva?! Hvorfor har du ikke sagt det til meg før nå? Jeg er ikke klar for å leve resten av livet som en fisk, du må få stoppet dette med en gang!</p>
+            <label class="check-btn" for="checkbox2">Videre</label>
+            <span class="tri bt-left"></span>
+        </div>
+        
+        <input type="checkbox" id="checkbox3">
+        <div id="chat3" class="speech">
+            <p>Oi beklager! Du virket bare så bestemt når du kom inn og i tillegg besto du testen, så jeg trodde du var klar for dette.. Nå vel, det er for sent å diskutere det nå. Trolldommen er irreversibel! Nå slipper  du i hvert fall å lete så langt etter veien hjem...</p>
+            <label class="check-btn" for="checkbox3">Videre</label>
+            <span class="tri right"></span>
+        </div>
+        <!-- Pilen som og er en klikkbar link -->
+        <a class="link-arrow right" href="../HTML/side11.html"></a>
+        <div class="backdrop"></div>
+        <!-- Her har vi div-er for begge øynene sånn at vi kan posisjonere flamme GIFen på hvert øye. -->
+        <div id="hero">
+            <div id="left-eye" class="eye"></div>
+            <div id="right-eye" class="eye"></div>
+        </div>
+    </main>
+</body>
+</html>

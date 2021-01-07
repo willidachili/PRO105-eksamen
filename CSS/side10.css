@@ -1,0 +1,172 @@
+body {
+    position: absolute;
+    background: #333;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+main {
+    position: absolute;
+    background: url(../images/background/bg-10.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Labels stylet som knapper, som trigger checkboxer som åpner og lukker snakkeboblene via :checked pseudo-regelen */
+label {
+    display: block;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+label:hover {
+    background: #ddd;
+}
+
+/* Skjuler checkboxene, da vi bruker tilhørende labels for å trigge dem */
+input {
+    display: none;
+}
+
+/* Hovedkarakteren */
+#hero {
+    background: url(../images/characters/back.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 400px;
+    height: 800px;
+    top: 89%;
+    left: 17%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* Alternative øyer på hovedkarakteren som animeres frem på slutten */
+.eye {
+    position: absolute;
+    background: url(../images/misc/flames.gif);
+    background-size: cover;
+    transform: translate(-50%, -50%);
+    height: 4%;
+    width: 8%;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#left-eye{
+    left: 34.3%;
+    top: 29%;
+}
+
+#right-eye {
+    left: 64.4%;
+    top: 29%;
+}
+
+/* backdrop som animeres frem på slutten */
+.backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    z-index: 0;
+}
+
+/* Hovedkarakteren animeres etter siste snakkeboble er lukket */
+#checkbox3:checked ~ #hero {
+    background: url(../images/characters/normal.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background .5s linear, top 3s linear, left 3s linear, height 3s linear, width 3s linear;
+    top: 80%;
+    left: 22%;
+    height: 1600px;
+    width: 800px;
+}
+
+#checkbox3:checked ~ #hero>.eye {
+    animation: eyes-on-fire 1s forwards;
+}
+
+#checkbox3:checked ~ .backdrop {
+    transition: opacity 3s;
+    opacity: .8;
+}
+
+/* Navigasjonspil som leder til neste side, dukker opp når trollmannen har utført trolldommen */
+.link-arrow {
+    left: 90%;
+    top: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+#checkbox3:checked ~ .link-arrow {
+   animation: arrow-visible .5s ease-in-out 3s forwards, arrow-wobble .5s alternate linear infinite;
+}
+
+/* CSS-regler for å vise neste snakkeboble og samtidig skjule den gjeldene snakkeboblen */
+
+.speech {
+    left: 33%;
+    top: 30%;
+    display: none;
+}
+
+#chat1 {
+    display: block;
+    opacity: 0;
+    animation: chat-appear 1s ease-in .5s forwards;
+}
+
+#checkbox1:checked + #chat1 {
+    display: none;
+}
+
+#checkbox1:checked ~ #chat2 {
+    display: block;
+}
+
+#checkbox2:checked + #chat2 {
+    display: none;
+}
+
+#checkbox2:checked ~ #chat3 {
+    display: block;
+}
+
+#checkbox3:checked + #chat3 {
+    display: none;
+}
+
+/* Animasjoner */
+
+@keyframes arrow-visible {
+    50% { transform: translate(-50%, -50%) scale(1.5, 1.5); }
+    100% { transform: translate(-50%, -50%) scale(1, 1); opacity: 1; }
+}
+
+@keyframes arrow-wobble {
+    0% { transform: translate(-40%, -50%); }
+    100% { transform: translate(-60%, -50%); }
+}
+
+@keyframes eyes-on-fire {
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes chat-appear {
+    0% { transform: translate(-40%, -60%) scale(.9, .9); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1, 1); opacity: 1; }
+}

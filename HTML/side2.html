@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bygg en flåte av plast</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/side2.css"/>
+</head>
+<body>
+    <main>
+        <!-- Søppelet i havet, de er checkboxer og labels sånn at vi kan bruke :checked pseudovelgeren for å reagere på tastetrykk -->
+        <input type="checkbox" id="trash1">
+        <input type="checkbox" id="trash2">
+        <input type="checkbox" id="trash3">
+        <input type="checkbox" id="trash4">
+        <input type="checkbox" id="trash5">
+        <input type="checkbox" id="trash6">
+        <input type="checkbox" id="trash7">
+        <input type="checkbox" id="trash8">
+        <input type="checkbox" id="trash9">
+        <!-- Ferdigbygde båten -->
+        <a class="raft" href="../HTML/side3.html"></a>
+        
+        <label for="trash1"></label>
+        <label for="trash2"></label>
+        <label for="trash3"></label>
+        <label for="trash4"></label>
+        <label for="trash5"></label>
+        <label for="trash6"></label>
+        <label for="trash7"></label>
+        <label for="trash8"></label>
+        <label for="trash9"></label>
+        <!-- Skilpadden som sitter fast i posen -->
+        <div id="turtle">
+            <p>Hjelp, jeg sitter fast!</p>
+            <p>Takk for hjelpen!</p>
+        </div>
+        <!-- Pil til neste side -->
+        <div id="arrow"></div>
+        <!-- Hovedkarakteren -->
+        <div id="hero"></div>
+        <!-- Tekstboblen -->
+        <div class="speech">
+            <p>Det er jo søppel overalt her. Den stakkars skilpadden holder på å kveles! Mens jeg bygger flåten kan jeg like så godt hjelpe den lille stakkaren.</p>
+            <p>Da var skilpadden reddet! Nå må jeg bare plukke opp resten av plasten.</p>
+            <p>Det var all plasten jeg kunne finne og endelig er flåten ferdig! Nå må jeg bare finne veien hjem.</p>
+            <!-- Vi bruker span for å determinere hvor pilen på tekstboksen skal posisjoneres, i dette tilfelle "tri left" så viser pilen på venstre side av tekstboblen -->
+            <span class="tri left"></span>
+        </div>
+        <!-- Hint-boksen som viser til hva en kan gjøre hvis noe er uklart eller man ikke finner veien videre -->
+        <input type="checkbox" id="hint-input">
+        <p id="hint-text">Trykk på søppelet som flyter rundt for å bygge opp flåten.</p>
+        <label id="hint-box" for="hint-input"></label>
+    </main>
+</body>
+</html>

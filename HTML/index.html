@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/index.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strandet på en øde øy</title>
+
+</head>
+<body>
+    <main>
+        <!-- Skyer wrappet rundt en div, sånn at vi kan time animasjonene for hver av de -->
+        <div class="cloud-list">
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+        </div>
+
+        <!-- Vi wrapper alle elementer som ikke skal bli feilskalert rundt object-position div-en -->
+        <div class="object-positions-div">
+            <div class="island"></div>
+            <!-- Dykkemasken som også er linken til neste side -->
+            <a class="link-click" href="../HTML/side2.html"></a> 
+            <!-- Hovedkarakter -->
+            <div class="hero sad"></div>
+            <!-- Tektsboble -->
+            <div class="speech">
+                <p>Hvor er jeg? Hvordan havnet jeg her? Hvorfor er det så mye søppel overalt?! Jeg må komme meg vekk herfra!</p>
+                <span class="tri bt-left"></span>
+            </div>
+            <!-- Flammen over bålet -->
+            <div class="flame"></div>
+            <!-- Søppelet i havet -->
+            <div>
+                <img class="trash" src="../images/misc/bag-1-in-ocean.png" alt="Plastpose">
+                <img class="trash" src="../images/misc/bottle-1-in-ocean.png" alt="Plastflaske">
+                <img class="trash" src="../images/misc/plastic-cup-in-ocean.png" alt="Plastkopp">
+            </div>
+        </div>
+        <!-- Hint-boksen som viser til hva en kan gjøre hvis noe er uklart eller man ikke finner veien videre -->
+        <input type="checkbox" id="hint-input">
+        <p id="hint-text">Trykk på dykkemasken for å komme deg under vann!</p>
+        <label id="hint-box" for="hint-input"></label>
+    </main>
+</body>
+</html>

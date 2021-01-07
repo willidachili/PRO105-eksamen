@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/side4.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triste dager på sjøen</title>
+</head>
+
+<body>
+    <main>
+        <!-- Skyene -->
+        <div class="cloud-list">
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+        </div>
+        <!-- Her wrapper vi alle elementene som skal være på sjøen inn i en div med hav-farge for at skaleringen skal bli riktig -->
+        <div id="ocean">
+            <!-- Liste med alle elementene som flyter på havet -->
+            <img src="../images/misc/oil-platform.png" id="object-animation-oil" alt="Oljeplattform">
+            <img src="../images/misc/dead-fish.png" id="object-animation-fish" alt="Død fisk">
+            <img src="../images/misc/dead-turtle.png" id="object-animation-turtle" alt="Død skilpadde">
+            <img src="../images/misc/bag-1.png" id="object-animation-plastic" alt="Plastpose">
+            <img src="../images/misc/bottle-5.png" id="object-animation-bottle" alt="Flaske">
+            
+            <!-- Tekstboblene med informasjon og bakhistorien som kommer flytende fra venstre, her er alle i en div-liste sånn at vi kunne stilere de hver for seg og endre timingen på enhver boble sånn at de kommer i riktig rekkefølge -->
+            <div>
+                <p class="world-infotext">Eksperter advarte menneskeheten i flere tiår om at hvis vi ikke endret vanene våre. <br> Hvis vi fortsatte å bruke og kaste om og om igjen, at vannmassene ville stige, og sjølivet ville dø ut.</p>
+                <p class="world-infotext">Men vi klarte ikke å se for oss farene før de var rett foran oss.</p>
+                <p class="world-infotext">Oljeslipp, gassutslipp og avskogning gjorde tilslutt at havnivået steg, og i tillegg gjorde det ulevelig.</p>
+                <p class="world-infotext">Nå er havet bare liv til søppel og avdøde arter, og det er ingenting vi kan gjøre for å stoppe det lenger.</p>
+                <p class="world-infotext">Det er desverre intet håp for oss lenger, vi mennesker alene kan ikke stoppe det, eller reversere det.</p>
+            </div>
+            
+            <!-- Hovedkarakteren -->
+            <div class="hero raft-sad"></div>
+            <a class="link-arrow right" href="../HTML/Side5.html"></a>
+            <!-- Tekstboblen til hovedkarakteren -->
+            <div class="speech">
+                <p>Får et trist syn, jeg må komme meg hjem med en gang!</p>
+                <span class="tri left"></span>
+            </div>
+            <!-- Hint-boksen      -->
+            <input type="checkbox" id="hint-input">
+            <p id="hint-text">Trykk pilen for å komme deg til neste side, men gjerne få med deg historien først :)</p>
+            <label id="hint-box" for="hint-input"></label>
+        </div>
+    </main>
+</body>
+</html>

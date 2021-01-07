@@ -1,0 +1,94 @@
+/* Setter bakgrunnsbilde og skalerer riktig */
+body {
+    position: absolute;
+    background: #333;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+main {
+    position: absolute;
+    background: url(../images/background/bg-7.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#raft-div{
+    width: 400px;
+    position: absolute;
+    right: 30%;
+    top: 50%;
+    transform:rotate(4deg);
+    animation: raft-on-land 1 ease-in-out 3s;
+}
+
+.hero {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    bottom: 30%;
+    right: 20%;
+    animation: leave-raft forwards linear 2s 3s;
+}
+
+.mermaid-in-water{
+    right: 0%;
+    top: 40%;
+    animation: wobble infinite ease-in-out 2500ms alternate;
+}
+
+.speech{
+    right: 5%;
+    top: 40%; 
+    opacity: 0; 
+    animation: show-visible 3s forwards 4s;
+}
+
+.link-arrow {
+    left: -30%;
+    top: 25%;
+    opacity: 0;
+    animation: show-visible 3s forwards 4s, left-and-right 2s infinite ease-in-out alternate;
+}
+
+/* Animasjoner */
+@keyframes leave-raft {
+    0%{ bottom: 30%; right: 20%; width: 250px; }
+    5% { transform: rotate(-4deg); }
+    10% { transform: rotate(4deg); }
+    15% { transform: rotate(-4deg); }
+    20% { transform: rotate(4deg); }
+    25% { transform: rotate(-4deg); }
+    30% { transform: rotate(4deg); }
+    35% { transform: rotate(-4deg); }
+    40% { transform: rotate(4deg); }
+    45% { transform: rotate(-4deg); bottom: 35%; right: 40%; }
+    50% { transform: rotate(-4deg); bottom: 35%; right: 40%; }
+    55% { transform: rotate(-4deg); bottom: 32%; right: 40%;}
+    60% { transform: rotate(-4deg); bottom: 45%; right: 55%;}
+    65% { transform: rotate(-4deg); bottom: 46%; }
+    70% { transform: rotate(-4deg); bottom: 40%; }
+    75% { transform: rotate(-4deg); bottom: 30%; right: 80%;}
+    80% { transform: rotate(4deg); }
+    85% { transform: rotate(-4deg); }
+    90% { transform: rotate(4deg); }
+    95% { transform: rotate(-4deg); }
+    100%{ width: 225px; bottom: 40%; right: 120%; transform: rotate(-4deg); }
+}
+
+@keyframes wobble {
+    0% { transform:  rotate(2deg); }
+    100% { transform: rotate(-2deg); }
+}
+
+@keyframes raft-on-land {
+    0%{ right: 10%; transform: rotate(-2deg) }
+    100%{ right: 30%; transform: rotate(4deg); }
+}
+

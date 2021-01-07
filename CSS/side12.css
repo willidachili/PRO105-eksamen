@@ -1,0 +1,167 @@
+
+/* Setter bakgrunnen på siden og fyller hele skjermen */
+
+body {
+    position: absolute;
+    background: #333;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    position: absolute;
+    background: url(../images/background/bg-12.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#car-and-wheels {
+    position: absolute; 
+    width: 600px;
+    height: 600px;
+    top: calc(100% - 450px);
+    animation: car infinite 15s linear;
+    animation-delay: 6s;
+    z-index: 2;
+    left: -100%;
+}
+
+#shark-in-car {
+    background-image: url(../images/characters/others/shark-in-car.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 600px;
+}
+
+.wheel {
+    background-image: url(../images/characters/others/wheel.png);
+    background-position: center;
+    background-size: contain;
+    height: 100px;
+    width: 100px; 
+    animation: spin 2.5s infinite linear;
+    position: absolute;
+}
+
+#wheel-1 {
+    top: 48%;
+    left: 13%
+}
+
+#wheel-2 {
+    left: 69.5%;
+    top: 47%;
+} 
+
+#char-pos {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    height: 50px;
+    top: calc(90% - 150px);
+    width: 100%;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+#person-to-crab {
+    background-image: url(../images/characters/others/littering-boy.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 150px;
+    animation: side-to-side .5s 6 alternate ease-in-out, person-to-crab-anim 3s forwards 3s, side-to-side 1s infinite 5s alternate ease-in-out;
+}
+
+#woman-to-fish {
+    background-image: url(../images/characters/others/woman-littering.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 400px;
+    animation: side-to-side .5s 6 alternate ease-in-out, woman-to-fish-anim 3s forwards 3s, up-and-down .25s infinite 5s alternate ease-in-out;
+}
+
+#man-to-turtle {
+    background-image: url(../images/characters/others/littering-man.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 400px;
+    animation: side-to-side .5s 6 alternate ease-in-out, man-to-turtle-anim 3s forwards 3s, side-to-side 1s infinite 5s alternate ease-in-out;
+}
+
+#end-text {
+    position: absolute;
+    top: -1%;
+    left: 1%;
+    text-shadow: 0px 0px 2px black, 0px 0px 2px black, -3.3px -.6px 2px black;
+    color: #eee;
+    font-size: 60px;
+    line-height: .2rem;
+    white-space: nowrap;
+    margin: 5px;
+}
+
+@keyframes person-to-crab-anim {
+    50% {
+        background-image: url(../images/characters/others/littering-boy.png);
+        height: 100px; width: 100px;
+    }
+    100% {
+        background-image: url(../images/characters/others/crab.png);
+        height: 100px; width: 100px;
+    }
+}
+
+@keyframes woman-to-fish-anim {
+    50% {
+        background-image: url(../images/characters/others/woman-littering.png); 
+        height: 70px; width: 70px;
+    }
+    100% {
+        background-image: url(../images/characters/others/human-turned-fish.png);
+        height: 70px; width: 70px;
+    }
+}
+
+@keyframes man-to-turtle-anim {
+    50% {
+        background-image: url(../images/characters/others/littering-man.png);
+        height: 100px; width: 100px;
+    }
+    100% { 
+        background-image: url(../images/characters/others/sad-turtle.png);
+        height: 100px; width: 100px;
+    }
+}
+
+@keyframes side-to-side {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(5%); }
+}
+
+   
+@keyframes up-and-down {
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(-10%); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes car {
+    0% { left: 110%; }
+    100% { left: -70%; }
+}

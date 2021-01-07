@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/Side5.css"/>
+    <meta name="viewport" content="width=@, initial-scale=1.0">
+    <title>Hvem er dette?</title>
+</head>
+<body>
+   <main>
+       <!-- Solen -->
+        <div id="sun"></div>
+        <!-- Skyene -->
+        <div class="cloud-list">
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+            <div class="cloud-anim"></div>
+        </div>
+        <!-- Hovedkarakteren -->
+        <div class="hero on-raft"></div>
+        <!-- Havfruen, som også er en klikkbar link -->
+        <a id="mermaid-in-water" href="../HTML/side6.html"></a>
+        <!-- Søppel i havet -->
+        <div class="plastic bottle-ocean"></div>
+        <div class="plastic bag-ocean"></div>        
+        <!-- Tekstboble til mannen, her er det en ekstra div sånn at vi kan posisjonere hver boble riktig og for timingen av animasjonen da tekstboblen dukker opp -->
+        <div class="speech" id="man-talking">
+            <p>Hallo der! Kan du hjelpe meg med å komme meg hjem?</p>
+            <span class="tri bt-right"></span>
+        </div>
+        <!-- Tekstboble til havfruen -->
+        <div class="speech" id="mermaid-talking">
+            <p>Det kan jeg, men først må jeg be om din hjelp til å redde havet, nå som det har blitt ødelagt av mennesker!</p>
+            <span class="tri bt-left"></span>
+        </div>
+        <!-- Hint-boksen -->
+        <input type="checkbox" id="hint-input">
+        <p id="hint-text">Trykk på havfruen for å komme deg videre!</p>
+        <label id="hint-box" for="hint-input"></label>
+   </main>
+</body>
+</html>

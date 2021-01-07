@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz og magi</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/side9.css">
+</head>
+<body>
+    <main>
+        <!-- Her starter dialogen mellom hovedkarakteren og trollmannen -->
+        <!-- Bruker checkbox for å skjule snakkebobla når man trykker videre -->
+        <input type="checkbox" id="checkbox1">
+        <div id="chat1" class="speech">
+            <p>Hallo der! Håper ikke jeg forstyrrer noe viktig.</p>
+
+            <!-- label er knyttet mot checkbox over og virker som en knapp som
+            markerer checkboxen, og via css skjuler div elementet -->
+            <label class="check-btn" for="checkbox1">Videre</label>
+            <span class="tri left"></span>
+        </div>
+        
+        <input type="checkbox" id="checkbox2">
+        <div id="chat2" class="speech">
+            <p>Å nei da, min dør er alltid åpen for gjester. </p>
+            <label class="check-btn" for="checkbox2">Videre</label>
+            <span class="tri right"></span>
+        </div>
+        
+        <input type="checkbox" id="checkbox3">
+        <div id="chat3" class="speech">
+            <p>Jeg hørte at du er en mektig trollmann som kan oppfylle ethvert ønske? Jeg har nemlig et  ønske om å stoppe forurensingen av havet og rette opp den skaden som allerede har blitt gjort!</p>
+            <label class="check-btn" for="checkbox3">Videre</label>
+            <span class="tri left"></span>
+        </div>
+        
+        <input type="checkbox" id="checkbox4">
+        <div id="chat4" class="speech">
+            <p>Det er et godt ønske og det er mulig å utføre, men før jeg kan gjøre dette må du bestå en test for å vise at du er verdig. Svarer du rett på mine tre spørsmål skal jeg oppfylle ønsket ditt!</p>
+            <label class="check-btn" for="checkbox4">Utfør testen!</label>
+            <span class="tri right"></span>
+        </div>
+        
+        <input type="checkbox" id="checkbox5">
+        <div id="quiz1" class="speech">
+            <p>Spørsmål 1:</p>
+            <p>Hvor mye av søppelet som dumpes i havet kan vi faktisk se med det blotte øye?</p>
+            
+            <!-- bruker checkbox submit sammen med en av radio-inputene som et
+            'argument'/velger i css for å style valgt svar og vise om bruker har 
+            valgt riktig -->
+            <input type="checkbox" id="submit1">
+            <input type="radio" id="wrong11" name="quiz1">
+            <label class="check-btn" for="wrong11">Vi kan se hele mengden av søppelet som blir kastet i havet.</label>
+            <input type="radio" id="correct1" name="quiz1">
+            <label class="check-btn" for="correct1">Vi ser kun seks prosent av søppelet som blir dumpet.</label>
+            <input type="radio" id="wrong12" name="quiz1">
+            <label class="check-btn" for="wrong12">Vi kan se ca 87% av søppelet.</label>
+            <label class="check-btn" for="submit1">Sjekk svar</label>
+            
+            <!-- Hvis bruker har valgt riktig dukker 'gå videre' knappen opp -->
+            <label class="check-btn" for="checkbox5">Riktig! Gå videre -></label>
+            <span class="tri right"></span>
+        </div>
+
+        <input type="checkbox" id="checkbox6">
+        <div id="quiz2" class="speech">
+            <p>Spørsmål 2:</p>
+            <p>Hvor kommer 80% av avfallet som ender opp i havet fra?</p>
+            <input type="checkbox" id="submit2">
+            <input type="radio" id="wrong21" name="quiz2">
+            <label class="check-btn" for="wrong21">Det aller meste kommer fra himmelen i form av ekskrement fra fugler.</label>
+            <input type="radio" id="wrong22" name="quiz2">
+            <label class="check-btn" for="wrong22">Det er avføring fra sjødyr som utgjør mesteparten av det.</label>
+            <input type="radio" id="correct2" name="quiz2">
+            <label class="check-btn" for="correct2">Det er menneskeskapt og kommer fra land.</label>
+            <label class="check-btn" for="submit2">Sjekk svar</label>
+            <label class="check-btn" for="checkbox6">Riktig! Gå videre -></label>
+            <span class="tri right"></span>
+        </div>
+
+        <input type="checkbox" id="checkbox7">
+        <div id="quiz3" class="speech">
+            <p>Spørsmålet 3:</p>
+            <p>Hvor mange tonn med ny plast ender opp i havet hvert minutt?</p>
+            <input type="checkbox" id="submit3">
+            <input type="radio" id="correct3" name="quiz3">
+            <label class="check-btn" for="correct3">15 tonn per minutt.</label>
+            <input type="radio" id="wrong31" name="quiz3">
+            <label class="check-btn" for="wrong31">4 tonn per minutt.</label>
+            <input type="radio" id="wrong32" name="quiz3">
+            <label class="check-btn" for="wrong32">Mindre enn 1 tonn per minutt.</label>
+            <label class="check-btn" for="submit3">Sjekk svar</label>
+            <label class="check-btn" for="checkbox7">Riktig! Gå videre -></label>
+            <span class="tri right"></span>
+        </div>
+
+        <!-- Siste snakkeboble, når bruker går videre aktiveres magic-orb og
+        nav-arrow animasjonene -->
+        <input type="checkbox" id="checkbox8">
+        <div id="chat5" class="speech">
+            <p>Gratulerer! Du har bestått testen og bevist at du er verdig for mine tryllekunster. Havet vil bli renset, dyrelivet skal gjenoppstå og menneskeheten vil aldri forurense havet igjen!</p>
+            <label class="check-btn" for="checkbox8">Gå videre</label>
+            <span class="tri right"></span>
+        </div>
+
+        <div id="hero"></div>
+        <div id="magic-orb"></div>
+        <a class="link-arrow right" href="../HTML/side10.html"></a>
+    </main>
+</body>
+</html>

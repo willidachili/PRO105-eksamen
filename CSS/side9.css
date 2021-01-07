@@ -1,0 +1,326 @@
+body {
+    position: absolute;
+    background: #333;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+main {
+    position: absolute;
+    background: url(../images/background/bg-9.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation: bg-pos 4s;
+}
+
+/* Labels stylet som knapper, som trigger checkboxer som åpner og lukker snakkeboblene via :checked pseudo-regelen */
+.check-btn {
+    border-top: 0;
+    border-radius: 0;
+}
+
+.check-btn:first-of-type {
+    border-top: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.check-btn:last-of-type {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+
+/* CSS-regler for å vise neste snakkeboble og samtidig skjule den gjeldene snakkeboblen */
+
+.speech {
+    left: 40%;
+    top: 40%;
+    display: none;
+}
+
+#chat1 {
+    display: block;
+    opacity: 0;
+    animation: chat-appear 1s ease-in 1s forwards;
+}
+
+/* Når man trykker på label for checkbox n skjules snakkeboble n */
+#checkbox1:checked + #chat1 {
+    display: none;
+}
+
+/* Når man trykker videre fra snakkeboble a, vises snakkeboble b */
+#checkbox1:checked ~ #chat2 {
+    display: block;
+}
+
+#checkbox2:checked + #chat2 {
+    display: none;
+}
+
+#checkbox2:checked ~ #chat3 {
+    display: block;
+}
+
+#checkbox3:checked + #chat3 {
+    display: none;
+}
+
+#checkbox3:checked ~ #chat4 {
+    display: block;
+}
+
+#checkbox4:checked + #chat4 {
+    display: none;
+}
+
+#checkbox4:checked ~ #quiz1 {
+    display: block;
+}
+
+#checkbox5:checked + #quiz1 {
+    display: none;
+}
+
+#checkbox5:checked ~ #quiz2 {
+    display: block;
+}
+
+#checkbox6:checked + #quiz2 {
+    display: none;
+}
+
+#checkbox6:checked ~ #quiz3 {
+    display: block;
+}
+
+#checkbox7:checked + #quiz3 {
+    display: none;
+}
+
+#checkbox7:checked ~ #chat5 {
+    display: block;
+}
+
+#checkbox8:checked + #chat5 {
+    display: none;
+}
+
+/* --- Her starter quizen --- */
+
+/* Spørsmål 1 */
+
+/* Skjuler label/knapp for å gå videre til neste spørsmål, da man må besvare spørsmålet for å komme videre */
+label[for="checkbox5"] {
+    display: none;
+}
+
+/* Svaralternativ endrer bakgrunnsfarge når man trykker på dem og før man bekrefter svaret med submit-knappen */
+input:checked + label {
+    background: cyan;
+}
+
+/* Sjekk svar-knappen endrer bakgrunnsfarge når man trykker på den */
+input[id="submit1"]:checked ~ label[for="submit1"] {
+    background: cyan;
+}
+
+/* Svarer man riktig, får svaralternativet grønn bakgrunnsfarge, ellers blir svaralternativet rødt/rosa */
+input[id="submit1"]:checked ~ input[id="correct1"]:checked ~ label[for="correct1"] {
+    background: lightgreen;
+}
+
+input[id="submit1"]:checked ~ input[id="wrong11"]:checked ~ label[for="wrong11"] {
+    background: pink;
+}
+
+input[id="submit1"]:checked ~ input[id="wrong12"]:checked ~ label[for="wrong12"] {
+    background: pink;
+}
+
+/* Svarer man riktig blir knappen for å gå videre synlig igjen */
+input[id="submit1"]:checked ~ input[id="correct1"]:checked ~ label[for="checkbox5"] {
+    display: block;
+}
+
+label[for="checkbox5"], label[for="checkbox6"], label[for="checkbox7"] {
+    animation: font-animate .5s infinite alternate linear;
+}
+
+/* Spørsmål 2 */
+
+/* Samme koden som for spørsmål 1, bare med andre ID- og for-verdier */
+
+label[for="checkbox6"] {
+    display: none;
+}
+
+input[id="submit2"]:checked ~ label[for="submit2"] {
+    background: cyan;
+}
+
+input[id="submit2"]:checked ~ input[id="correct2"]:checked ~ label[for="correct2"] {
+    background: lightgreen;
+}
+
+input[id="submit2"]:checked ~ input[id="wrong21"]:checked ~ label[for="wrong21"] {
+    background: pink;
+}
+
+input[id="submit2"]:checked ~ input[id="wrong22"]:checked ~ label[for="wrong22"] {
+    background: pink;
+}
+
+input[id="submit2"]:checked ~ input[id="correct2"]:checked ~ label[for="checkbox6"] {
+    display: block;
+}
+
+/* Spørsmål 3 */
+
+/* Samme koden som for spørsmål 1, bare med andre ID- og for-verdier */
+
+label[for="checkbox7"] {
+    display: none;
+}
+
+input[id="submit3"]:checked ~ label[for="submit3"] {
+    background: cyan;
+}
+
+input[id="submit3"]:checked ~ input[id="correct3"]:checked ~ label[for="correct3"] {
+    background: lightgreen;
+}
+
+input[id="submit3"]:checked ~ input[id="wrong31"]:checked ~ label[for="wrong31"] {
+    background: pink;
+}
+
+input[id="submit3"]:checked ~ input[id="wrong32"]:checked ~ label[for="wrong32"] {
+    background: pink;
+}
+
+input[id="submit3"]:checked ~ input[id="correct3"]:checked ~ label[for="checkbox7"] {
+    display: block;
+}
+
+/* --- Her slutter quizzen --- */
+
+/* Hovedkarakteren hilser på trollmannen */
+#hero {
+    background: url(../images/characters/wave.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 420px;
+    height: 500px;
+    top: 70%;
+    left: 17%;
+    transform: translate(-50%, -50%);
+    animation: into-frame 3s forwards;
+}
+
+/* Hovedkarakteren senker armen når samtalen starter */
+#checkbox1:checked ~ #hero {
+    background: url(../images/characters/normal.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hovedkarakteren smiler og hopper med armene i været når man har fullført quizen */
+#checkbox7:checked ~ #hero {
+    background: url(../images/characters/happy.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: jump .5s infinite alternate;
+}
+
+/* Magisk kule som utvider seg og fader ut når trollmannen utfører magi */
+#magic-orb {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at center, cyan 0, blue 30%,  transparent 50%);
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Magi-animasjonen trigges når man lukker den siste snakkeboblen */
+#checkbox8:checked ~ #magic-orb {
+    animation: magic-spell 3s ease-in-out;
+}
+
+/* Navigasjonspil som leder til neste side, dukker opp når trollmannen har utført trolldommen */
+.link-arrow {
+    background-position: center;
+    left: 90%;
+    top: 50%;
+    opacity: 0;
+}
+
+#checkbox8:checked ~ .link-arrow {
+   animation: arrow-visible .5s ease-in-out 3s forwards, arrow-wobble .5s alternate linear infinite;
+}
+
+/* Animasjoner */
+
+/* Bakgrunnen beveger seg inn mot midten hvis man har vinduet smalere enn
+16:9 */
+@keyframes bg-pos {
+    0% { background-position: left; }
+    100% { background-position: center; }
+}
+
+/* Mannen vår beveger seg inn i bildet fra nedre venstre hjørnet */
+@keyframes into-frame {
+    0% { top: 100%; left: 0; height: 400px; }
+    100% { top: 70%; left: 17%; height: 500px; }
+}
+
+/* Første snakkeboble animeres inn */
+@keyframes chat-appear {
+    0% { transform: translate(-80%, 20%) scale(.5, .5); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1, 1); opacity: 1; }
+}
+
+/* 'gå videre'-knappen blinker grønt når man har svart riktig */
+@keyframes font-animate {
+    100% { background-color: lightgreen}
+}
+
+/* Hovedkarakteren hopper av glede */
+@keyframes jump {
+    100% { transform: translate(-50%, -60%) }
+}
+
+/* Trollmannen kaster en magikule */
+@keyframes magic-spell {
+    50% { opacity: 1; }
+    
+    100% {
+        opacity: 0;
+        width: 400%;
+        height: 400%;
+        display: none;
+    }
+}
+
+/* Retningspil dukker opp på slutten */
+@keyframes arrow-visible {
+    50% { transform: translate(-50%, -50%) scale(1.5, 1.5); }
+    100% { transform: translate(-50%, -50%) scale(1, 1); opacity: 1; }
+}
+
+/* Retningspil går frem og tilbake */
+@keyframes arrow-wobble {
+    0% { transform: translate(-40%, -50%); }
+    100% { transform: translate(-60%, -50%); }
+}
